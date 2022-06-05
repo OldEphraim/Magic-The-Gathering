@@ -1,0 +1,57 @@
+.cardList {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.example-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+mat-card-header {
+  display: block !important;
+  text-align: center;
+}
+
+mat-card img {
+  max-height: 223px;
+  max-width: 310px;
+  width: 310px !important;
+  margin: 0;
+  object-fit: scale-down;
+}
+
+mat-card-content {
+  padding-top: 10px;
+  display: block !important;
+  margin: auto;
+  max-width: 310px;
+}
+
+p {
+  text-align: center;
+  white-space: pre-line;
+}
+
+.p {
+  padding-top: 10px;
+  text-align: center;
+  white-space: pre-line;
+}
+
+mat-spinner {
+  display: block;
+  margin: auto;
+}
+
+#manaCost {
+  display: inline;
+  text-align: center;
+}
+
+.tag-image {
+  max-height: 14px;
+}

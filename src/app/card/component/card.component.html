@@ -1,0 +1,21 @@
+<h4>
+  <a [routerLink]="['/']">Return to search</a>
+</h4>
+
+<div *ngIf="!card">
+  <mat-spinner></mat-spinner>
+</div>
+
+<ng-container *ngIf="card">
+  <img *ngIf="card.imageUrl" [src]="card.imageUrl">
+  <h2>{{ card.name }}</h2>
+  <div class="p"><b>Mana Cost: </b><div id="manaCost">{{ card.manaCost | manaCostIcons }}</div></div>
+  <div class="p"><b>Converted Mana Cost: </b>{{ card.cmc }}</div>
+  <div class="p"><b>Types: </b>{{ card.type }}</div>
+  <div class="p"><b>Card Text: </b><div id="text">{{ card.text | textIcons }}</div></div>
+  <div class="p" *ngIf="card.flavor"><b>Flavor Text: </b><i>{{ card.flavor }}</i></div>
+  <div class="p" *ngIf="card.power && card.toughness"><b>P/T: </b>{{ card.power }}/{{ card.toughness }}</div>
+  <div class="p"><b>Set Name: </b>{{ card.setName }}</div>
+  <div class="p"><b>Rarity: </b>{{ card.rarity }}</div>
+  <div class="p"><b>Artist: </b>{{ card.artist }}</div>
+</ng-container>

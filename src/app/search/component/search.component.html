@@ -1,0 +1,36 @@
+<p>
+  <mat-form-field class="wide-input" appearance="outline">
+    <mat-label>Search for your card here</mat-label>
+    <input matInput placeholder="Card name" [formControl]="searchFormControl">
+    <mat-icon matSuffix>search</mat-icon>
+  </mat-form-field>
+</p>
+
+<div *ngIf="loading">
+  <mat-spinner></mat-spinner>
+</div>
+
+<!-- <mat-list>
+  <mat-list-item *ngFor="let result of filteredResults">
+    <a *ngIf="result.imageUrl" [routerLink]="['/card', result.multiverseid]" (click)="stateService.setCard(result)"><img src="{{ result.imageUrl }}" alt="{{ result.name }}"></a>
+  </mat-list-item>
+</mat-list> -->
+
+<div class="cardList">
+  <ng-container *ngFor="let result of filteredResults">
+    <mat-card class="example-card">
+        <mat-card-header>
+          <div style="text-align: center;">
+          <a *ngIf="result.imageUrl" [routerLink]="['/card', result.multiverseid]" (click)="stateService.setCard(result)"><mat-card-title>{{ result.name }}</mat-card-title></a>
+          </div>
+        </mat-card-header>
+        <a *ngIf="result.imageUrl" [routerLink]="['/card', result.multiverseid]" (click)="stateService.setCard(result)"><img mat-card-image [src]="result.imageUrl" alt="result.name"></a>
+      <mat-card-content>
+        <div class="p"><b>{{ result.name }} <div class="manaCost" id="{{ result.id }}">{{ result.manaCost | manaCostIcons: result.id.toString() }}</div></b></div>
+        <div class="p"><b>{{ result.type }}</b></div>
+        <div class="p"><div class="text" id="{{ result.imageUrl }}">{{ result.text | textIcons: result.imageUrl.toString() }}</div></div>
+        <div class="p"><i>{{ result.flavor }}</i></div>
+      </mat-card-content>
+    </mat-card>
+  </ng-container>
+</div>

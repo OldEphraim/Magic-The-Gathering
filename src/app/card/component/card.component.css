@@ -1,0 +1,21 @@
+mat-spinner {
+  display: block;
+  margin: auto;
+}
+
+img, h2, .p {
+  display: block;
+  margin: auto;
+  text-align: center;
+  padding-bottom: 10px;
+  white-space: pre-line;
+}
+
+#manaCost {
+  display: inline;
+  text-align: center;
+}
+
+h4 {
+  margin-left: 10px;
+}
