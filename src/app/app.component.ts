@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { SharedStateService } from './services/shared-state.service';
 
 @Component({
   selector: 'app-root',
@@ -7,6 +6,6 @@ import { SharedStateService } from './services/shared-state.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  constructor(public stateService: SharedStateService) {};
+  constructor() {};
   title = 'magic-app-2';
 }

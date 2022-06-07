@@ -9,7 +9,7 @@ export class TextIconsPipe implements PipeTransform {
   transform(value: string, multiverseid: string): string {
     let regex = /{(.*?)}/g
     let match = value.match(regex);
-    let array = value.split(regex).filter(Boolean);
+    let array = value.split(regex);
     for (let i = 0; i < array.length; i++) {
       if (array[i].length === 1) {
         for (let j = 0; j < match.length; j++) {
@@ -25,7 +25,6 @@ export class TextIconsPipe implements PipeTransform {
     } else if (match !== null) {
        for (let i = 0; i < array.length; i++) {
         if (array[i].charAt(0) === "{") {
-          // rewrite inside of comment, down
           if (array[i].length === 3 && array[i].charAt(1) !== "T") {
           newArr.push(`<img style="max-height:14px;" src="https://gatherer.wizards.com/Handlers/Image.ashx?size=medium&name=${array[i].charAt(1)}&type=symbol" alt="${array[i].charAt(1)}"></img>`)
           }

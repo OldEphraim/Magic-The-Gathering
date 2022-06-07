@@ -22,14 +22,14 @@ export class CardComponent implements OnInit, OnDestroy {
         takeWhile(() => this.alive),
         filter(card => !!card),
         filter(card => {
-          try {
+         try {
+            if (card.multiverseid === id) {
             this.card = card;
-            console.log(card);
-            return card.multiverseid === parseInt(id, 10);
-          } catch (e) {
-            return false;
+         }} catch (e) {
+          return false;
           }
-        })
+        }
+      )
       )
       .subscribe(card => {
         this.card = card;
@@ -38,7 +38,7 @@ export class CardComponent implements OnInit, OnDestroy {
       const serviceCard = this.stateService.card.getValue();
       this.cardService.card.next(serviceCard);
       this.cardService.loadCard(id);
-  }
+}
   ngOnDestroy() {
     this.alive = false;
   }

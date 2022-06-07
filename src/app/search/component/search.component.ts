@@ -14,7 +14,6 @@ export class SearchComponent implements OnInit, OnDestroy {
   searchFormControl = new FormControl("");
   searchResults = [];
   filteredResults = [];
-  searchTerm = "";
   loading = false;
   constructor(public searchService: SearchService, public stateService: SharedStateService) { }
 

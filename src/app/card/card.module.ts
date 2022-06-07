@@ -6,6 +6,7 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { CardRoutingModule } from './card-routing.module';
 import { CardComponent } from './component/card.component';
 import { CardService } from '../services/card.service';
+import { SharedStateService } from '../services/shared-state.service';
 
 import { ManaCostIconsPipe } from './pipes/mana-cost-icons.pipe';
 import { TextIconsPipe } from './pipes/text-icons.pipe';
@@ -19,7 +20,7 @@ import { TextIconsPipe } from './pipes/text-icons.pipe';
     MatProgressSpinnerModule
   ],
   providers: [
-    CardService
+    CardService, SharedStateService
   ]
 })
 export class CardModule { }

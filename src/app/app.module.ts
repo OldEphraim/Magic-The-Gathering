@@ -3,7 +3,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
-import { SharedStateService } from './services/shared-state.service';
 
 @NgModule({
   declarations: [
@@ -14,7 +13,7 @@ import { SharedStateService } from './services/shared-state.service';
     AppRoutingModule,
     BrowserAnimationsModule
   ],
-  providers: [SharedStateService],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
